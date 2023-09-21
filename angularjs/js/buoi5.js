@@ -18,6 +18,7 @@ myApp.controller("svController", function ($scope) {
     $scope.namSinh = "2003";
     $scope.chuyenNganh = "phat trien phan mem";
 
+    $scope.index = 1;
     // Khai báo mảng
     $scope.students = [
         {
