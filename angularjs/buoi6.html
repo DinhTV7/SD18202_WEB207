@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./libs/angular.min.js"></script>
+    <title>Buổi 2: AngularJS</title>
+</head>
+<body ng-app="myApp">
+    <div ng-controller="staffsController">
+        <input type="text" ng-model="limit">
+        <table class="table">
+            <tr>
+                <td>STT</td>
+                <td>Tên</td>
+                <td>Ngày sinh</td>
+                <td>Lương</td>
+                <td>Giới tính</td>
+            </tr>
+            <tr ng-repeat="item in staffs | limitTo: limit">
+                <td>{{ $index + 1 }}</td>
+                <td ng-click="sayHello(item.ten)">{{ item.ten | uppercase }}</td>
+                <td ng-mouseenter="tuoi(item.ngaySinh)">{{ item.ngaySinh | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ item.mucLuong | currency: '' : 0 }}</td>
+                <td>{{ item.gioiTinh == 0 ? "Nam" : "Nữ" }}</td>
+            </tr>
+        </table>
+        <!-- Tạo 1 ô input
+            Nhập vào vào số bao nhiêu sẽ hiển thị bấy nhiêu bản ghi
+        -->
+
+        <!-- ng-model dùng để liên kết dữ liệu 2 chiều
+            giữa view và một biến chứa dữ liệu
+        -->
+        <h1>{{ hoTen }}</h1>
+        <input type="text" ng-model="hoTen">
+
+        <!-- Click -->
+        <button class="btn btn-secondary" ng-click="sayHello()">Ấn vào em đi</button>
+    
+        <!-- Click vào tên của nhân viên nào thì hiển thị 
+        Xin chào + tên của nhân viên đấy
+        -->
+
+        <!-- hover -->
+        <h3 ng-mouseenter="hover()">Đưa tay đây nào....</h3>
+        
+        <!-- 
+            Khi hover vào ngày sinh của nhân viên
+            tính tuổi nếu
+            tuổi < 18 thì hiển thị "Đi tù"
+            tuổi >= 18 thì hiển thị "Cưới thôi"
+         -->
+    </div>
+</body>
+<script src="./js/buoi6.js"></script>
+</html>
