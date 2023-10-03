@@ -21,18 +21,14 @@ window.GioiThieuController = function ($scope, $routeParams) {
     ];
 
     $scope.createStudent = function () {
-        let flag = false;
-
-        if (flag == true) {
-            // Lấy dữ liệu student nhập vào
-            let newStudent = {
-                ten: $scope.student.name,
-                namSinh: $scope.student.year,
-                chuyenNganh: $scope.student.couse
-            }
-
-            console.log(newStudent);
-            $scope.students.push(newStudent);
+        // Lấy dữ liệu student nhập vào
+        let newStudent = {
+            ten: $scope.student.name,
+            namSinh: $scope.student.year,
+            chuyenNganh: $scope.student.couse
         }
+
+        console.log(newStudent);
+        $scope.students.push(newStudent);
     }
 }
