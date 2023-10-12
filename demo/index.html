@@ -43,6 +43,7 @@
 
 <script src="./controllers/ListStudentController.js"></script>
 <script src="./controllers/AddStudentController.js"></script>
+<script src="./controllers/EditStudentController.js"></script>
 <script>
     let myApp = angular.module('appRoute', ['ngRoute']);
     myApp.config(function ($routeProvider) {
@@ -59,6 +60,13 @@
                 {
                     templateUrl: 'views/addstudent.html', 
                     controller: AddStudentController 
+                }
+            )
+            .when(
+                '/edit-student/:id',
+                {
+                    templateUrl: 'views/editstudent.html', 
+                    controller: EditStudentController 
                 }
             )
             .otherwise(

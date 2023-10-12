@@ -15,7 +15,7 @@ function myFunction($scope) {
 
 myApp.controller("svController", function ($scope) {
     $scope.ten = "nguyen van a";
-    $scope.namSinh = "2003";
+    $scope.namSinh = new Date("1989-06-03T01:25:27.926Z");
     $scope.chuyenNganh = "phat trien phan mem";
 
     $scope.index = 1;
